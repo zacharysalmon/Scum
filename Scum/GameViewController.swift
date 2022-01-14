@@ -8,42 +8,51 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+	
+	override func viewDidLoad()
+	{
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+		
+        if let view = self.view as? SKView
+		{
+            // Load the SKScene from 'GameScene.swift
+			var scene: GameScene?
+			scene = GameScene(size: self.view.bounds.size, game_scene: self)
+			scene?.scaleMode = .aspectFit
+			view.presentScene(scene)
             
-            view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
+		
         }
     }
+	
+	
+	/*
+		This function loads the view after checking the bounds for the iOS device screen.
+	*/
+	override func loadView()
+	{
+		let skView = SKView(frame: UIScreen.main.bounds)
+		self.view = skView
+	}
+	
+	/*
+		This function sets up the sounds for the game. There are no sound effects, but it does
+		allow for other sounds that can run in the background be played while the app is running.
+	*/
+	func setupSounds()
+	{
+		// Let's the user listen to outside audio while the app is playing.
+		try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+		try? AVAudioSession.sharedInstance().setActive(true)
+	}
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }

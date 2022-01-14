@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  SettingsScene.swift
 //  Scum
 //
 //  Created by Zack Salmon on 1/7/22.
@@ -8,19 +8,19 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene
+class SettingsScene: SKScene
 {
 	
 	var pause_node: SKSpriteNode!
 	var score_node: SKLabelNode!
 	var game_scene: GameViewController!
 	var countdown_node: SKLabelNode!
-    
+	
 	init(size: CGSize, game_scene: GameViewController!)
 	{
 		super.init(size: size)
 		self.game_scene = game_scene
-		self.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+		self.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
 		
 		let spriteSize = CGSize(width: 50.0, height: 50.0)
 		self.pause_node = SKSpriteNode(imageNamed: "pause_button")
@@ -54,37 +54,37 @@ class GameScene: SKScene
 		
 	}
 	
-    override func didMove(to view: SKView)
+	override func didMove(to view: SKView)
 	{
-        
-    }
-    
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+		
+	}
+	
+	
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 		let location = touches.first?.location(in: self)
-		print("1")
+		print("2")
 		changeScene()
 		
 	}
-        
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
-	{
-		let location = touches.first?.location(in: self)
 		
-    }
-    
+	
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
+	{
+		
+	}
+	
+	
 	func changeScene()
 	{
-		let s = SettingsScene(size: self.view!.bounds.size, game_scene: game_scene)
-		s.scaleMode = .aspectFill
+		let s = GameScene(size: self.view!.bounds.size, game_scene: game_scene)
+		s.scaleMode = .aspectFit
 		view?.presentScene(s)
 	}
-    
-    override func update(_ currentTime: TimeInterval)
+	
+	override func update(_ currentTime: TimeInterval)
 	{
-        // Called before each frame is rendered
-    }
+		// Called before each frame is rendered
+	}
 }
