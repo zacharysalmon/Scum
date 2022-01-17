@@ -63,7 +63,7 @@ class SettingsScene: SKScene
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
-		let location = touches.first?.location(in: self)
+//		let location = touches.first?.location(in: self)
 		print("2")
 		changeScene()
 		

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384A94762795D8F20013BE8B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A94752795D8F20013BE8B /* Deck.swift */; };
+		384A94782795D9F10013BE8B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A94772795D9F10013BE8B /* Card.swift */; };
+		384A947C27961DE70013BE8B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A947B27961DE70013BE8B /* Player.swift */; };
 		38891B672788D96600256A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38891B662788D96600256A33 /* AppDelegate.swift */; };
 		38891B6B2788D96600256A33 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 38891B6A2788D96600256A33 /* Actions.sks */; };
 		38891B6D2788D96600256A33 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38891B6C2788D96600256A33 /* GameScene.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		384A94752795D8F20013BE8B /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		384A94772795D9F10013BE8B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		384A947B27961DE70013BE8B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		38891B632788D96600256A33 /* Scum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38891B662788D96600256A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38891B6A2788D96600256A33 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 				38891B662788D96600256A33 /* AppDelegate.swift */,
 				38891B6A2788D96600256A33 /* Actions.sks */,
 				38891B6C2788D96600256A33 /* GameScene.swift */,
+				384A94752795D8F20013BE8B /* Deck.swift */,
+				384A947B27961DE70013BE8B /* Player.swift */,
+				384A94772795D9F10013BE8B /* Card.swift */,
 				38BB3151279208490061AB13 /* SettingsScene.swift */,
 				38891B6E2788D96600256A33 /* GameViewController.swift */,
 				38891B702788D96600256A33 /* Main.storyboard */,
@@ -266,7 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				38891B6D2788D96600256A33 /* GameScene.swift in Sources */,
+				384A94782795D9F10013BE8B /* Card.swift in Sources */,
 				38BB3152279208490061AB13 /* SettingsScene.swift in Sources */,
+				384A94762795D8F20013BE8B /* Deck.swift in Sources */,
+				384A947C27961DE70013BE8B /* Player.swift in Sources */,
 				38891B6F2788D96600256A33 /* GameViewController.swift in Sources */,
 				38891B672788D96600256A33 /* AppDelegate.swift in Sources */,
 			);
@@ -453,6 +465,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -484,6 +497,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

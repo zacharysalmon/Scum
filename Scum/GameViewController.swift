@@ -13,6 +13,22 @@ import AVFoundation
 class GameViewController: UIViewController
 {
 
+	var deck: Deck? = Deck()
+	
+//__________________________________________________________________________________________________
+//__________________________________________________________________________________________________
+	
+	
+	
+	/*
+		This function loads the view after checking the bounds for the iOS device screen.
+	*/
+	override func loadView()
+	{
+		let skView = SKView(frame: UIScreen.main.bounds)
+		self.view = skView
+//		print("p")
+	}
 	
 	override func viewDidLoad()
 	{
@@ -29,19 +45,13 @@ class GameViewController: UIViewController
             
             view.showsFPS = true
             view.showsNodeCount = true
-		
         }
+		
+		deck?.shuffleDeck()
+		deck?.printDeck()
     }
 	
 	
-	/*
-		This function loads the view after checking the bounds for the iOS device screen.
-	*/
-	override func loadView()
-	{
-		let skView = SKView(frame: UIScreen.main.bounds)
-		self.view = skView
-	}
 	
 	/*
 		This function sets up the sounds for the game. There are no sound effects, but it does

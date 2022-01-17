@@ -63,7 +63,7 @@ class GameScene: SKScene
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
-		let location = touches.first?.location(in: self)
+//		let location = touches.first?.location(in: self)
 		print("1")
 		changeScene()
 		
@@ -72,7 +72,7 @@ class GameScene: SKScene
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
-		let location = touches.first?.location(in: self)
+//		let location = touches.first?.location(in: self)
 		
     }
     
