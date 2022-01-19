@@ -13,20 +13,21 @@ class GameScene: SKScene
 	
 	var pause_node: SKSpriteNode!
 	var score_node: SKLabelNode!
-	var game_scene: GameViewController!
+	var game_view_controller: GameViewController!
 	var countdown_node: SKLabelNode!
     
-	init(size: CGSize, game_scene: GameViewController!)
+	init(size: CGSize, game_view_controller: GameViewController!)
 	{
 		super.init(size: size)
-		self.game_scene = game_scene
+		self.game_view_controller = game_view_controller
 		self.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
 		
-		let spriteSize = CGSize(width: 50.0, height: 50.0)
-		self.pause_node = SKSpriteNode(imageNamed: "pause_button")
+		let spriteSize = CGSize(width: 100.0, height: 150.0)
+		self.pause_node = SKSpriteNode(imageNamed: "ace_of_spades")
+		print(self.pause_node.size, spriteSize)
 		self.pause_node.size = spriteSize
-		self.pause_node.position = CGPoint(x: size.width - spriteSize.width, y: spriteSize.height)
-		
+		self.pause_node.position = CGPoint(x: size.width - pause_node.size.width, y: pause_node.size.height)
+
 		self.score_node = SKLabelNode(text: "Score: 0")
 		self.score_node.fontName = "Georgia-Bold"
 		self.score_node.fontColor = UIColor.black
@@ -51,7 +52,6 @@ class GameScene: SKScene
 	required init?(coder aDecoder: NSCoder)
 	{
 		super.init(coder: aDecoder)
-		
 	}
 	
     override func didMove(to view: SKView)
@@ -64,7 +64,6 @@ class GameScene: SKScene
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 //		let location = touches.first?.location(in: self)
-		print("1")
 		changeScene()
 		
 	}
@@ -78,7 +77,7 @@ class GameScene: SKScene
     
 	func changeScene()
 	{
-		let s = SettingsScene(size: self.view!.bounds.size, game_scene: game_scene)
+		let s = SettingsScene(size: self.view!.bounds.size, game_view_controller: game_view_controller)
 		s.scaleMode = .aspectFill
 		view?.presentScene(s)
 	}

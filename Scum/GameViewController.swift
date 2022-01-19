@@ -12,9 +12,12 @@ import AVFoundation
 
 class GameViewController: UIViewController
 {
-
-	var deck: Deck? = Deck()
-	
+//	var numberOfPlayers: Int = 10
+	var deck: Deck?
+	var players: [Player] = [Player(name: "Zack"), Player(name: "Lyndsey"), Player(name: "Mike"),
+							 Player(name: "Kelsey"), Player(name: "Josh"), Player(name: "Indi"),
+							 Player(name: "Kirt"), Player(name: "Karen"), Player(name: "Haley"),
+							 Player(name: "Cam")]
 //__________________________________________________________________________________________________
 //__________________________________________________________________________________________________
 	
@@ -27,7 +30,10 @@ class GameViewController: UIViewController
 	{
 		let skView = SKView(frame: UIScreen.main.bounds)
 		self.view = skView
-//		print("p")
+		
+		deck = Deck(numberOfPlayers: players.count)
+		deck?.shuffleDeck()
+		distributeHands()
 	}
 	
 	override func viewDidLoad()
@@ -38,7 +44,7 @@ class GameViewController: UIViewController
 		{
             // Load the SKScene from 'GameScene.swift
 			var scene: GameScene?
-			scene = GameScene(size: self.view.bounds.size, game_scene: self)
+			scene = GameScene(size: self.view.bounds.size, game_view_controller: self)
 			scene?.scaleMode = .aspectFit
 			view.presentScene(scene)
             
@@ -47,10 +53,25 @@ class GameViewController: UIViewController
             view.showsNodeCount = true
         }
 		
-		deck?.shuffleDeck()
-		deck?.printDeck()
     }
 	
+	
+	
+	func distributeHands()
+	{
+		for each in players
+		{
+			each.hand = deck!.dealDeck()
+//			each.printHand()
+		}
+		if deck!.deck.count != 0
+		{
+			for i in 0...deck!.deck.count - 1
+			{
+				players[i].hand.append(deck!.deck.popLast()!)
+			}
+		}
+	}
 	
 	
 	/*

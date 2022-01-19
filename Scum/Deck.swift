@@ -11,18 +11,25 @@ class Deck
 {
 	
 	var deck: [Card] = []
+	let numberOfPlayers: Int
+	var cardsPerPlayer: Int
+//__________________________________________________________________________________________________
+//__________________________________________________________________________________________________
 	
-	init()
+	
+	
+	init (numberOfPlayers: Int)
 	{
-		for i in 1...4
+		self.numberOfPlayers = numberOfPlayers
+		self.cardsPerPlayer = 0
+		let numberOfDecks = numberOfPlayers / 2
+
+		for _ in 0...numberOfDecks
 		{
-			for j in 2...14
-			{
-				let card = Card(suit: i, rank: j)
-				self.deck.append(card)
-			}
+			addPlayingCards()
+			addJokers()
 		}
-		addJokers()
+		self.cardsPerPlayer = deck.count / numberOfPlayers
 	}
 	
 	
@@ -33,12 +40,18 @@ class Deck
 	}
 	
 	
-	func dealDeck(numberOfPlayers: Int)
+	func dealDeck() -> [Card]
 	{
-		for i in 0...numberOfPlayers
-		{
-			
-		}
+		let handSlice: ArraySlice<Card> = deck[..<cardsPerPlayer]
+		var hand: [Card] = Array(handSlice)
+		
+		deck.removeSubrange(..<cardsPerPlayer)
+		hand.sort(by: Card.lessThan(lhs:rhs:))
+		
+//		print("cardsPerPlayer: " + String(cardsPerPlayer))
+//		print(String(hand.count) + " cards taken.")
+//		print("cards left: " + String(deck.count))
+		return hand
 	}
 	
 	
@@ -56,12 +69,26 @@ class Deck
 	/*
 	 Adds 2 jokers to the end of the deck, since each deck should come with two jokers.
 	 Jokers have a suit value that doesn't match any other suits, and rank 15 to signify the highest rank possible.
-	 The rank gets changed to the rank of other cards it is played with, or stays as the highest value if played as an ace.
+	 The joker's rank gets changed to the rank of other the cards it is played with, or stays as the highest value if played as an ace.
 	 */
-	func addJokers()
+	fileprivate func addJokers()
 	{
 		deck.append(Card(suit: 5, rank: 15))
 		deck.append(Card(suit: 5, rank: 15))
+	}
+	
+	
+	fileprivate func addPlayingCards()
+	{
+		for i in 1...4
+		{
+			for j in 2...14
+			{
+				let card = Card(suit: i, rank: j)
+				self.deck.append(card)
+			}
+			
+		}
 	}
 	
 	
