@@ -20,6 +20,7 @@
 		38891B812788D96B00256A33 /* ScumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38891B802788D96B00256A33 /* ScumTests.swift */; };
 		38891B8B2788D96B00256A33 /* ScumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38891B8A2788D96B00256A33 /* ScumUITests.swift */; };
 		38891B8D2788D96B00256A33 /* ScumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38891B8C2788D96B00256A33 /* ScumUITestsLaunchTests.swift */; };
+		38BA086227A0690700071B66 /* Ace_of_spades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA086127A0690700071B66 /* Ace_of_spades.swift */; };
 		38BB3152279208490061AB13 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB3151279208490061AB13 /* SettingsScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		38891B8A2788D96B00256A33 /* ScumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScumUITests.swift; sourceTree = "<group>"; };
 		38891B8C2788D96B00256A33 /* ScumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		38891B992788D9A800256A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		38BA086127A0690700071B66 /* Ace_of_spades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ace_of_spades.swift; sourceTree = "<group>"; };
 		38BB3151279208490061AB13 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,18 +111,19 @@
 		38891B652788D96600256A33 /* Scum */ = {
 			isa = PBXGroup;
 			children = (
-				38891B992788D9A800256A33 /* Info.plist */,
-				38891B662788D96600256A33 /* AppDelegate.swift */,
 				38891B6A2788D96600256A33 /* Actions.sks */,
-				38891B6C2788D96600256A33 /* GameScene.swift */,
-				384A94752795D8F20013BE8B /* Deck.swift */,
-				384A947B27961DE70013BE8B /* Player.swift */,
-				384A94772795D9F10013BE8B /* Card.swift */,
-				38BB3151279208490061AB13 /* SettingsScene.swift */,
-				38891B6E2788D96600256A33 /* GameViewController.swift */,
-				38891B702788D96600256A33 /* Main.storyboard */,
+				38891B662788D96600256A33 /* AppDelegate.swift */,
 				38891B732788D96B00256A33 /* Assets.xcassets */,
+				384A94772795D9F10013BE8B /* Card.swift */,
+				384A94752795D8F20013BE8B /* Deck.swift */,
+				38891B6C2788D96600256A33 /* GameScene.swift */,
+				38BA086127A0690700071B66 /* Ace_of_spades.swift */,
+				38891B6E2788D96600256A33 /* GameViewController.swift */,
+				38891B992788D9A800256A33 /* Info.plist */,
 				38891B752788D96B00256A33 /* LaunchScreen.storyboard */,
+				38891B702788D96600256A33 /* Main.storyboard */,
+				384A947B27961DE70013BE8B /* Player.swift */,
+				38BB3151279208490061AB13 /* SettingsScene.swift */,
 			);
 			path = Scum;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				38891B6D2788D96600256A33 /* GameScene.swift in Sources */,
 				384A94782795D9F10013BE8B /* Card.swift in Sources */,
+				38BA086227A0690700071B66 /* Ace_of_spades.swift in Sources */,
 				38BB3152279208490061AB13 /* SettingsScene.swift in Sources */,
 				384A94762795D8F20013BE8B /* Deck.swift in Sources */,
 				384A947C27961DE70013BE8B /* Player.swift in Sources */,
@@ -470,7 +474,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +506,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

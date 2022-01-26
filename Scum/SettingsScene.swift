@@ -20,7 +20,7 @@ class SettingsScene: SKScene
 	{
 		super.init(size: size)
 		self.game_view_controller = game_view_controller
-		self.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+		self.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
 
 		let spriteSize = CGSize(width: 50.0, height: 50.0)
 		self.pause_node = SKSpriteNode(imageNamed: "pause_button")
@@ -63,7 +63,7 @@ class SettingsScene: SKScene
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 //		let location = touches.first?.location(in: self)
-		changeScene()
+//		changeScene()
 
 	}
 
@@ -74,12 +74,12 @@ class SettingsScene: SKScene
 
 	}
 
-	func changeScene()
-	{
-		let s = GameScene(size: self.view!.bounds.size, game_view_controller: game_view_controller)
-		s.scaleMode = .aspectFill
-		view?.presentScene(s)
-	}
+//	func changeScene()
+//	{
+//		let s = GameScene(size: self.view!.bounds.size, game_view_controller: game_view_controller)
+//		s.scaleMode = .aspectFill
+//		view?.presentScene(s)
+//	}
 
 	override func update(_ currentTime: TimeInterval)
 	{

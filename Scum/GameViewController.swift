@@ -9,6 +9,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import SwiftUI
 
 class GameViewController: UIViewController
 {
@@ -32,8 +33,16 @@ class GameViewController: UIViewController
 		self.view = skView
 		
 		deck = Deck(numberOfPlayers: players.count)
+
+//		deck?.printDeck()
 		deck?.shuffleDeck()
 		distributeHands()
+
+//		Image(players[0].hand.last!.card_name)
+//		for each in players
+//		{
+//			each.printHand()
+//		}
 	}
 	
 	override func viewDidLoad()
@@ -47,7 +56,9 @@ class GameViewController: UIViewController
 			scene = GameScene(size: self.view.bounds.size, game_view_controller: self)
 			scene?.scaleMode = .aspectFit
 			view.presentScene(scene)
-            
+
+			scene?.showCards(players: players)
+//			scene!.addChild(SKNode(fileNamed: players[0].hand[0].card_name)!)
             
             view.showsFPS = true
             view.showsNodeCount = true
@@ -70,6 +81,10 @@ class GameViewController: UIViewController
 			{
 				players[i].hand.append(deck!.deck.popLast()!)
 			}
+		}
+		for each in players
+		{
+			each.hand.sort(by: Card.lessThan(lhs:rhs:))
 		}
 	}
 	
